@@ -1,16 +1,39 @@
 package com.example.assignment1;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class EmailReading extends ActionBarActivity {
 
+	TextView txtTo;
+	TextView txtFrom;
+	TextView txtCC;
+	TextView txtBCC;
+	TextView txtSubject;
+	TextView txtBody;
+	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_email_reading);
+		txtTo = (TextView)findViewById(R.id.txtTo);
+		txtFrom = (TextView)findViewById(R.id.txtFrom);
+		txtCC = (TextView)findViewById(R.id.txtCC);
+		txtBCC = (TextView)findViewById(R.id.txtBCC);
+		txtSubject = (TextView)findViewById(R.id.txtSubject);
+		txtBody = (TextView)findViewById(R.id.txtBody);
+		
+		Intent intent = getIntent();
+		txtTo.setText(intent.getStringExtra((EmailComposition.STATE_TO)));
+		txtFrom.setText(intent.getStringExtra((EmailComposition.STATE_FROM)));
+		txtCC.setText(intent.getStringExtra((EmailComposition.STATE_CC)));
+		txtBCC.setText(intent.getStringExtra((EmailComposition.STATE_BCC)));
+		txtSubject.setText(intent.getStringExtra((EmailComposition.STATE_SUBJECT)));
+		txtBody.setText(intent.getStringExtra((EmailComposition.STATE_BODY)));
 	}
 
 	@Override

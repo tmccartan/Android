@@ -6,13 +6,34 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 public class EmailComposition extends ActionBarActivity {
 
+	static final String STATE_TO = "to";
+	static final String STATE_FROM = "from";
+	static final String STATE_CC = "cc";
+	static final String STATE_BCC = "bcc";
+	static final String STATE_SUBJECT = "subject";
+	static final String STATE_BODY = "body";
+	
+	EditText txtTo;
+	EditText txtFrom;
+	EditText txtCC;
+	EditText txtBCC;
+	EditText txtSubject;
+	EditText txtBody;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_email_composition);
+		
+		txtTo = (EditText)findViewById(R.id.txtTo);
+		txtFrom = (EditText)findViewById(R.id.txtFrom);
+		txtCC = (EditText)findViewById(R.id.txtCC);
+		txtBCC = (EditText)findViewById(R.id.txtBCC);
+		txtSubject = (EditText)findViewById(R.id.txtSubject);
+		txtBody = (EditText)findViewById(R.id.txtBody);
 	}
 
 	@Override
@@ -33,9 +54,39 @@ public class EmailComposition extends ActionBarActivity {
 		}
 		return super.onOptionsItemSelected(item);
 	}
+	@Override
+	public void onSaveInstanceState(Bundle savedInstanceState) {
+	    // Save the user's current game state
+	    savedInstanceState.putString(STATE_TO, txtTo.getText().toString());
+	    savedInstanceState.putString(STATE_FROM, txtFrom.getText().toString());
+	    savedInstanceState.putString(STATE_CC, txtCC.getText().toString());
+	    savedInstanceState.putString(STATE_BCC, txtBCC.getText().toString());
+	    savedInstanceState.putString(STATE_SUBJECT, txtSubject.getText().toString());
+	    savedInstanceState.putString(STATE_BODY, txtBody.getText().toString());
+	    // Always call the superclass so it can save the view hierarchy state
+	    super.onSaveInstanceState(savedInstanceState);
+	}
+	@Override
+	public void onRestoreInstanceState(Bundle savedInstanceState) {
+	    // Always call the superclass so it can restore the view hierarchy
+	    super.onRestoreInstanceState(savedInstanceState);
+	    
+	    txtTo.setText(savedInstanceState.getString(STATE_TO));
+		txtFrom.setText(savedInstanceState.getString(STATE_FROM));
+		txtCC.setText(savedInstanceState.getString(STATE_CC));
+		txtBCC.setText(savedInstanceState.getString(STATE_BCC));
+		txtSubject.setText(savedInstanceState.getString(STATE_SUBJECT));
+		txtBody.setText(savedInstanceState.getString(STATE_BODY));
+	}
 	public void SendEmail(View view)
 	{
 		Intent intent = new Intent(this, EmailReading.class);
+		intent.putExtra(STATE_TO, txtTo.getText().toString());
+		intent.putExtra(STATE_FROM, txtFrom.getText().toString());
+		intent.putExtra(STATE_CC, txtCC.getText().toString());
+		intent.putExtra(STATE_BCC, txtBCC.getText().toString());
+		intent.putExtra(STATE_SUBJECT, txtSubject.getText().toString());
+		intent.putExtra(STATE_BODY, txtBody.getText().toString());
     	startActivity(intent);	
 	}
 }
