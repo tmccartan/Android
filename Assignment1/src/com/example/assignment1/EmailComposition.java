@@ -1,7 +1,9 @@
 package com.example.assignment1;
 
 import android.support.v7.app.ActionBarActivity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -34,6 +36,22 @@ public class EmailComposition extends ActionBarActivity {
 		txtBCC = (EditText)findViewById(R.id.txtBCC);
 		txtSubject = (EditText)findViewById(R.id.txtSubject);
 		txtBody = (EditText)findViewById(R.id.txtBody);
+		if(savedInstanceState != null)
+		{
+			RestoreForm(savedInstanceState);
+		}
+		else
+		{
+			SharedPreferences prefs = this.getSharedPreferences(
+		    	      "com.example.app", Context.MODE_PRIVATE);
+			txtTo.setText(prefs.getString(STATE_TO,""));
+			txtFrom.setText(prefs.getString(STATE_FROM,""));
+			txtCC.setText(prefs.getString(STATE_CC,""));
+			txtBCC.setText(prefs.getString(STATE_BCC,""));
+			txtSubject.setText(prefs.getString(STATE_SUBJECT,""));
+			txtBody.setText(prefs.getString(STATE_BODY,""));
+		}
+			
 	}
 
 	@Override
@@ -65,13 +83,38 @@ public class EmailComposition extends ActionBarActivity {
 	    savedInstanceState.putString(STATE_BODY, txtBody.getText().toString());
 	    // Always call the superclass so it can save the view hierarchy state
 	    super.onSaveInstanceState(savedInstanceState);
+	    SharedPreferences prefs = this.getSharedPreferences(
+	    	      "com.example.app", Context.MODE_PRIVATE);
+	    prefs.edit().putString(STATE_TO, txtTo.getText().toString()).commit();
+	    prefs.edit().putString(STATE_FROM, txtFrom.getText().toString()).commit();
+	    prefs.edit().putString(STATE_CC, txtCC.getText().toString()).commit();
+	    prefs.edit().putString(STATE_BCC, txtBCC.getText().toString()).commit();
+	    prefs.edit().putString(STATE_SUBJECT, txtSubject.getText().toString()).commit();
+	    prefs.edit().putString(STATE_BODY, txtBody.getText().toString()).commit();
 	}
 	@Override
 	public void onRestoreInstanceState(Bundle savedInstanceState) {
 	    // Always call the superclass so it can restore the view hierarchy
 	    super.onRestoreInstanceState(savedInstanceState);
+	    RestoreForm(savedInstanceState);
 	    
-	    txtTo.setText(savedInstanceState.getString(STATE_TO));
+	}
+	@Override
+	public void onDestroy()
+	{
+		SharedPreferences prefs = this.getSharedPreferences(
+	    	      "com.example.app", Context.MODE_PRIVATE);
+	    prefs.edit().putString(STATE_TO, txtTo.getText().toString()).commit();
+	    prefs.edit().putString(STATE_FROM, txtFrom.getText().toString()).commit();
+	    prefs.edit().putString(STATE_CC, txtCC.getText().toString()).commit();
+	    prefs.edit().putString(STATE_BCC, txtBCC.getText().toString()).commit();
+	    prefs.edit().putString(STATE_SUBJECT, txtSubject.getText().toString()).commit();
+	    prefs.edit().putString(STATE_BODY, txtBody.getText().toString()).commit();
+	    super.onDestroy();
+	}
+	public void RestoreForm(Bundle savedInstanceState)
+	{
+		txtTo.setText(savedInstanceState.getString(STATE_TO));
 		txtFrom.setText(savedInstanceState.getString(STATE_FROM));
 		txtCC.setText(savedInstanceState.getString(STATE_CC));
 		txtBCC.setText(savedInstanceState.getString(STATE_BCC));
@@ -88,5 +131,14 @@ public class EmailComposition extends ActionBarActivity {
 		intent.putExtra(STATE_SUBJECT, txtSubject.getText().toString());
 		intent.putExtra(STATE_BODY, txtBody.getText().toString());
     	startActivity(intent);	
+	}
+	public void ClearEmail(View view)
+	{
+		txtTo.setText(null);
+		txtFrom.setText(null);
+		txtCC.setText(null);
+		txtBCC.setText(null);
+		txtSubject.setText(null);
+		txtBody.setText(null);
 	}
 }

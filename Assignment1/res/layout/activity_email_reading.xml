@@ -18,7 +18,8 @@
         <TableLayout
             android:id="@+id/tableLayout1"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content" >
+            android:layout_height="wrap_content"
+            android:stretchColumns="*" >
 
             <TableRow
                 android:id="@+id/tableRow1"
@@ -40,8 +41,8 @@
                 <TextView
                     android:id="@+id/txtTo"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                     />
+                    android:layout_height="wrap_content" />
+
             </TableRow>
 
             <TableRow
@@ -64,10 +65,8 @@
                 <TextView
                     android:id="@+id/txtFrom"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10"
-                    android:inputType="textEmailAddress"
-                     />
+                    android:layout_height="wrap_content" />
+
             </TableRow>
 
             <TableRow
@@ -90,7 +89,7 @@
 
                 <TextView
                     android:id="@+id/txtCC"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="10" />
        
@@ -101,25 +100,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="BCC"
-                     />
-
             </TableRow>
 
             <TableRow
                 android:id="@+id/tableRow8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" >
-
-                <TextView
-                    android:id="@+id/txtBCC"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:ems="10" />
 
             </TableRow>
 
@@ -143,9 +129,22 @@
 
                 <TextView
                     android:id="@+id/txtSubject"
-                    android:layout_width="wrap_content"
+                    android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:ems="10" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Body" />
 
             </TableRow>
 
@@ -156,8 +155,8 @@
 
                 <TextView
                     android:id="@+id/txtBody"
-                    android:layout_width="match_parent"
-                    android:layout_height="fill_parent"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="textMultiLine" />
 
@@ -173,17 +172,11 @@
                     android:layout_height="wrap_content" >
 
                     <Button
-                        android:id="@+id/button2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Clear" />
-
-                    <Button
                         android:id="@+id/button1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="SendEmail"
-                        android:text="Send" />
+                        android:onClick="GoBack"
+                        android:text="Back" />
 
                 </LinearLayout>
 
