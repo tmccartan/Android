@@ -25,13 +25,6 @@ public class MainActivity extends ActionBarActivity {
 		ListView list = (ListView)findViewById(R.id.fruitList);
 		CustomAdapter adapter = new CustomAdapter(this,generateData());
 		list.setAdapter(adapter);
-		 
-		//ListView listView = getListView();
-		//listView.setTextFilterEnabled(true);
-		// Click event for single list row
-		
-		 
-	        // listening to single list item on click
 	      
 		list.setOnItemClickListener(new OnItemClickListener() {
 			 	@Override
@@ -47,9 +40,9 @@ public class MainActivity extends ActionBarActivity {
 	}
    private ArrayList<Item> generateData(){
         ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item("Banana",R.drawable.banana_icon));
-        items.add(new Item("Orange", R.drawable.orange_icon));
-        items.add(new Item("Apple",R.drawable.apple_icon));
+        items.add(new Item(getString(R.string.txtBanana),R.drawable.banana_icon));
+        items.add(new Item(getString(R.string.txtOrange), R.drawable.orange_icon));
+        items.add(new Item(getString(R.string.txtApple),R.drawable.apple_icon));
  
         return items;
     }

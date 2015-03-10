@@ -5,7 +5,8 @@
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_fruit_detail">Fruit Detail</string>
-	<string name="txtBanana">Banana</string>
-    <string name="txtOrange">Orange</string>
-    <string name="txtApple">Apple</string>
+    <string name="txtBanana">Banane</string>
+    <string name="txtOrange">Apfelsine</string>
+    <string name="txtApple">Apfel</string>
+
 </resources>
