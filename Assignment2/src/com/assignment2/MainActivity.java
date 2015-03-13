@@ -41,7 +41,7 @@ public class MainActivity extends ActionBarActivity {
         items.add(new Item(getString(R.string.txtBanana),R.drawable.banana_icon,"#FFFF00"));
         items.add(new Item(getString(R.string.txtOrange), R.drawable.orange_icon,"#FF6633"));
         items.add(new Item(getString(R.string.txtApple),R.drawable.apple_icon,"#33FF00"));
- 
+        items.add(new Item(getString(R.string.txtStrawberry),R.drawable.strawberry_icon,"#FF0000"));
         return items;
     }
 

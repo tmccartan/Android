@@ -8,6 +8,7 @@
     <string name="txtBanana">Banana</string>
     <string name="txtOrange">Orange</string>
     <string name="txtApple">Apple</string>
+     <string name="txtStrawberry">Strawberry</string>
 	<string name="txtPickFruitTitle">Pick a fruit</string>
 	<string name="txtFruitDetail">Fruit Details</string>
 	<color name="backgroundColour">#33CCFF</color>

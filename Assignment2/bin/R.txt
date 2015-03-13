@@ -338,6 +338,7 @@ int drawable apple_icon 0x7f020033
 int drawable banana_icon 0x7f020034
 int drawable ic_launcher 0x7f020035
 int drawable orange_icon 0x7f020036
+int drawable strawberry_icon 0x7f020037
 int id action_bar 0x7f090031
 int id action_bar_activity_content 0x7f090003
 int id action_bar_container 0x7f090030
@@ -459,9 +460,10 @@ int string hello_world 0x7f0a0011
 int string title_activity_fruit_detail 0x7f0a0013
 int string txtApple 0x7f0a0016
 int string txtBanana 0x7f0a0014
-int string txtFruitDetail 0x7f0a0018
+int string txtFruitDetail 0x7f0a0019
 int string txtOrange 0x7f0a0015
-int string txtPickFruitTitle 0x7f0a0017
+int string txtPickFruitTitle 0x7f0a0018
+int string txtStrawberry 0x7f0a0017
 int style AppBaseTheme 0x7f0b00eb
 int style AppTheme 0x7f0b00ec
 int style Base_TextAppearance_AppCompat 0x7f0b0098
