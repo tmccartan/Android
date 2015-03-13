@@ -8,5 +8,7 @@
     <string name="txtBanana">Banane</string>
     <string name="txtOrange">Apfelsine</string>
     <string name="txtApple">Apfel</string>
+    <string name="txtPickFruitTitle">Wählen Sie einen Obst</string>
+	<string name="txtFruitDetail">Obst-Details</string>
 
 </resources>

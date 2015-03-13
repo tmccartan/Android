@@ -16,16 +16,14 @@ import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
 
-	static final String[] FRUIT = new String[] 
-			{"Banana", "Orange","Apple" };
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_main); 
 		ListView list = (ListView)findViewById(R.id.fruitList);
 		CustomAdapter adapter = new CustomAdapter(this,generateData());
 		list.setAdapter(adapter);
-	      
+		
 		list.setOnItemClickListener(new OnItemClickListener() {
 			 	@Override
 				public void onItemClick(AdapterView<?> parent, View view,
@@ -40,9 +38,9 @@ public class MainActivity extends ActionBarActivity {
 	}
    private ArrayList<Item> generateData(){
         ArrayList<Item> items = new ArrayList<Item>();
-        items.add(new Item(getString(R.string.txtBanana),R.drawable.banana_icon));
-        items.add(new Item(getString(R.string.txtOrange), R.drawable.orange_icon));
-        items.add(new Item(getString(R.string.txtApple),R.drawable.apple_icon));
+        items.add(new Item(getString(R.string.txtBanana),R.drawable.banana_icon,"#FFFF00"));
+        items.add(new Item(getString(R.string.txtOrange), R.drawable.orange_icon,"#FF6633"));
+        items.add(new Item(getString(R.string.txtApple),R.drawable.apple_icon,"#33FF00"));
  
         return items;
     }

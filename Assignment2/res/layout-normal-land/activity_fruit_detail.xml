@@ -6,24 +6,33 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@color/backgroundColour"
     tools:context="com.assignment2.FruitDetail" >
-
-    <ImageView
-        android:id="@+id/imgFruit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtFruitName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
 
     <TextView
         android:id="@+id/txtFruitName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:text="TextView"
         android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/imgFruit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/txtFruitName" />
+
+    <TextView
+        android:id="@+id/txtInitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtFruitName"
+        android:layout_alignLeft="@+id/txtFruitName"
+        android:text="T"
+        android:textSize="70sp" />
 
 </RelativeLayout>

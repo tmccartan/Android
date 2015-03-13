@@ -26,4 +26,14 @@
         android:text="TextView"
         android:textSize="50sp" />
 
+    <TextView
+        android:id="@+id/txtInitial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/txtFruitName"
+        android:layout_alignBottom="@+id/txtFruitName"
+        android:layout_alignLeft="@+id/imgFruit"
+        android:text="T"
+        android:textSize="90sp" />
+
 </RelativeLayout>

@@ -4,6 +4,7 @@ package com.assignment2;
 
 import android.support.v7.app.ActionBarActivity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,6 +23,10 @@ public class FruitDetail extends ActionBarActivity {
 		txtName.setText(selectedItem.name);
 		ImageView img = (ImageView)findViewById(R.id.imgFruit);
 		img.setImageResource(selectedItem.image);
+		TextView initial = (TextView) findViewById(R.id.txtInitial);
+		initial.setText(selectedItem.initial);
+		initial.setTextColor(Color.parseColor(selectedItem.colour));
+		txtName.setTextColor(Color.parseColor(selectedItem.colour));
 	}
 
 	@Override

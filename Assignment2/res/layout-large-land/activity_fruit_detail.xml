@@ -9,33 +9,30 @@
     android:background="@color/backgroundColour"
     tools:context="com.assignment2.FruitDetail" >
 
-    <ImageView
-        android:id="@+id/imgFruit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/txtFruitName"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/apple_icon" />
-
     <TextView
         android:id="@+id/txtFruitName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="35dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
         android:text="TextView"
-        android:textSize="40sp" />
+        android:textSize="50sp" />
+
+    <ImageView
+        android:id="@+id/imgFruit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/txtFruitName" />
 
     <TextView
         android:id="@+id/txtInitial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/txtFruitName"
-        android:layout_alignBottom="@+id/txtFruitName"
-        android:layout_alignLeft="@+id/imgFruit"
+        android:layout_above="@+id/txtFruitName"
+        android:layout_toRightOf="@+id/imgFruit"
         android:text="T"
-        android:textSize="70sp" />
+        android:textSize="90sp" />
 
 </RelativeLayout>
