@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Dinner Buddy</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_ingrediants">Ingredients</string>
+    <string name="title_activity_recipe_detail">Recipe</string>
+    <string name="title_activity_favourites">Favourites</string>
+    <string name="title_activity_recipe_list">Recipe List</string>
+    <string name="minutes">Minutes</string>
+    <string name="Rating">Rating</string>
+	<color name="backgroundColour">#FFFFFF</color>
+</resources>
